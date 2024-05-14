@@ -10,7 +10,7 @@
    <children>
       <VBox alignment="CENTER_LEFT" prefHeight="469.0" prefWidth="287.0">
          <children>
-            <Label prefHeight="179.0" prefWidth="215.0" text="Iniciar Sesión">
+            <Label prefHeight="179.0" prefWidth="261.0" text="Iniciar Sesión">
                <font>
                   <Font size="36.0" />
                </font>

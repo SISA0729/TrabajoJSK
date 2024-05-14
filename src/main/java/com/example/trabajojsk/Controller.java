@@ -29,11 +29,16 @@ public class Controller implements Initializable {
 
     @FXML
     private void eventkey(KeyEvent event){
-
+        if (textContraseña.equals("1234")){
+            System.out.println("SISA");
+        }else {
+            event.consume();
+        }
     }
 
     @FXML
     private void eventAction(ActionEvent event) throws IOException {
+
         Object o = event.getSource();
         Node node = (Node) o;
         Scene scene1 = node.getScene();
