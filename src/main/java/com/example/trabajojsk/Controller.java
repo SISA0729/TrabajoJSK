@@ -29,11 +29,7 @@ public class Controller implements Initializable {
 
     @FXML
     private void eventkey(KeyEvent event){
-        if (textContraseña.equals("1234")){
-            System.out.println("SISA");
-        }else {
-            event.consume();
-        }
+
     }
 
     @FXML
