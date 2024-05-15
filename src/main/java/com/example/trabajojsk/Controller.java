@@ -23,6 +23,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     @FXML
     private Hyperlink link;
+    private Hyperlink flecha;
 
     @FXML
     private TextField textUsuario;
@@ -45,6 +46,19 @@ public class Controller implements Initializable {
         Stage stage = (Stage) window;
 
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/registro.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+    @FXML
+    private void eventFlecha(ActionEvent event) throws IOException {
+
+        Object f = event.getSource();
+        Node node = (Node) f;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/inicio.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }

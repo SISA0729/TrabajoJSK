@@ -6,11 +6,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="503.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
+<HBox prefHeight="503.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="469.0" prefWidth="287.0">
             <children>
-                <Label prefHeight="124.0" prefWidth="266.0" text="Registrate">
+                <VBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="286.0">
+               <children>
+                  <Hyperlink fx:id="flecha" onAction="#eventFlecha" prefHeight="35.0" prefWidth="42.0" text="🢀">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+               </children></VBox>
+                <Label prefHeight="71.0" prefWidth="266.0" text="Registrate">
                     <font>
                         <Font name="System Bold" size="36.0" />
                     </font>
@@ -20,7 +29,10 @@
                 </Label>
                 <VBox prefHeight="200.0" prefWidth="100.0">
                     <children>
-                  <TextField fx:id="textNombre" promptText="Nombre" />
+                  <TextField fx:id="textNombre" promptText="Nombre">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></TextField>
                   <TextField fx:id="teextApellidos" promptText="Apellidos">
                      <VBox.margin>
                         <Insets top="20.0" />
@@ -39,7 +51,7 @@
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin></PasswordField>
-                        <Button fx:id="botonContinuar" mnemonicParsing="false" onAction="#eventAction" prefWidth="287.0" text="Continuar">
+                        <Button fx:id="botonContinuar" mnemonicParsing="false" prefWidth="287.0" text="Continuar">
                             <font>
                                 <Font size="18.0" />
                             </font>
@@ -52,7 +64,6 @@
                         <Insets left="20.0" right="20.0" />
                     </VBox.margin>
                 </VBox>
-                <VBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="286.0" />
             </children>
         </VBox>
         <VBox alignment="CENTER" prefHeight="501.0" prefWidth="515.0" style="-fx-background-color: #30373e;">
