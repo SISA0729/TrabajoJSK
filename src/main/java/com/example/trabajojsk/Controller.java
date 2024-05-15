@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -65,15 +62,25 @@ public class Controller implements Initializable {
     @FXML
     private void eventAction(ActionEvent event) throws IOException {
 
-        Object o = event.getSource();
-        Node node = (Node) o;
-        Scene scene1 = node.getScene();
-        Window window = scene1.getWindow();
-        Stage stage = (Stage) window;
+        String nombre = textUsuario.getText();
 
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+        if (nombre.equals("SISA")){
+            Object o = event.getSource();
+            Node node = (Node) o;
+            Scene scene1 = node.getScene();
+            Window window = scene1.getWindow();
+            Stage stage = (Stage) window;
+
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error!");
+            alert.setHeaderText("Usuario no registrado");
+            alert.setContentText("Crea un usuario para poder acceder");
+            alert.show();
+        }
     }
 
     @Override
