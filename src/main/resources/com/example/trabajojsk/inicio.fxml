@@ -45,13 +45,25 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </VBox>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="286.0">
+               <children>
+                  <Hyperlink text="Crear Usuario">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </VBox>
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="501.0" prefWidth="515.0" style="-fx-background-color: #30373e;">
          <children>
             <ImageView fitHeight="405.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../java/images/LOGO-SISA.png" />
+                  <Image url="@LOGO-SISA.png" />
                </image>
             </ImageView>
          </children></VBox>
