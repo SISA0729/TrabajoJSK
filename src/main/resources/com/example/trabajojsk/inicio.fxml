@@ -47,7 +47,7 @@
             </VBox>
             <VBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="286.0">
                <children>
-                  <Hyperlink text="Crear Usuario">
+                  <Hyperlink fx:id="link" onAction="#eventLink" text="Crear Usuario">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
