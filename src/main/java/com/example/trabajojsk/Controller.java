@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     @FXML
     private TextField textUsuario;
-    private TextField textContraseña;
+    private TextField textContrasena;
 
     @FXML
     private Button botonIniciar;

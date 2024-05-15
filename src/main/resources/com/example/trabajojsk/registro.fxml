@@ -35,7 +35,7 @@
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin></TextField>
-                        <PasswordField fx:id="textContraseña" onKeyTyped="#eventkey" promptText="Contraseña">
+                        <PasswordField fx:id="textContrasena" onKeyTyped="#eventkey" promptText="Contraseña">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin></PasswordField>

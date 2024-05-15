@@ -31,7 +31,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="textContraseña" onKeyTyped="#eventkey" />
+                  <PasswordField fx:id="textContrasena" onKeyTyped="#eventkey" />
                   <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#eventAction" prefWidth="287.0" text="Iniciar">
                      <font>
                         <Font size="18.0" />

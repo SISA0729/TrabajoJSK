@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller" />
+<BorderPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
+   <left>
+      <AnchorPane prefHeight="501.0" prefWidth="209.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="115.0" prefWidth="200.0" style="-fx-background-color: #A5AC3A;">
+               <children>
+                      <VBox alignment="TOP_CENTER" prefHeight="501.0" prefWidth="206.0" style="-fx-background-color: #4a5867;">
+                          <children>
+                              <ImageView fitHeight="122.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@LOGO-SISA.png" />
+                                  </image>
+                              </ImageView>
+                        <Label text="Bienvenido a JSK!!" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="394.0" prefWidth="201.0">
+                           <children>
+                              <AnchorPane prefHeight="361.0" prefWidth="201.0">
+                                 <children>
+                                    <Button layoutX="23.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Inicio" />
+                                    <Button layoutX="23.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Menu" />
+                                    <Button layoutX="23.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Puntos" />
+                                    <Button layoutX="23.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Salir" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                          </children></VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+       
+   </left>
+</BorderPane>
