@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,10 +22,12 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     @FXML
     private Hyperlink link;
+    @FXML
     private Hyperlink flecha;
 
     @FXML
     private TextField textUsuario;
+    @FXML
     private TextField textContrasena;
 
     @FXML
@@ -60,10 +63,16 @@ public class Controller implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
+
     @FXML
     private void eventAction(ActionEvent event) throws IOException {
 
         String nombre = textUsuario.getText();
+        String rutaFichero = "src\\main\\java\\com\\example\\trabajojsk\\Ficheros";
+        Crear_y_comprobar_fichero(rutaFichero);
+
+
+
 
         if (nombre.equals("SISA")){
             Object o = event.getSource();
@@ -81,11 +90,21 @@ public class Controller implements Initializable {
             alert.setHeaderText("Usuario no registrado");
             alert.setContentText("Crea un usuario para poder acceder");
             alert.show();
+
         }
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+
+    public static boolean Crear_y_comprobar_fichero (String ruta){
+        File fichero = new File(ruta);
+       return fichero.exists();    
+    }
+
+
 }
