@@ -1,5 +1,6 @@
 package com.example.trabajojsk;
 
+import com.example.trabajojsk.POO.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -36,6 +36,31 @@ public class Controller implements Initializable {
     @FXML
     private void eventkey(KeyEvent event){
 
+    }
+    @FXML
+    private void eventContinuar(){
+        String nombre = textUsuario.getText();
+        String contra = textContrasena.getText();
+        Usuario usuario = new Usuario(nombre,contra);
+        FileWriter fw;
+
+        try {
+            FileOutputStream fichero = new FileOutputStream("C:\\Users\\ALCY\\IdeaProjects\\TrabajoJSK\\src\\main\\java\\com\\example\\trabajojsk\\Ficheros\\Usuarios");
+            ObjectOutputStream person = new ObjectOutputStream(fichero);
+            person.writeObject(usuario);
+
+
+            fw = new FileWriter(String.valueOf(fichero));
+            fw.append(";"+nombre+";");
+            fw.append(";"+contra+";");
+
+            fw.close();
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("File not found", e);
+        } catch (IOException e) {
+            throw new RuntimeException("Error initializing stream", e);
+        }
     }
     @FXML
     private void eventLink(ActionEvent event) throws IOException {
@@ -71,8 +96,7 @@ public class Controller implements Initializable {
         String rutaFichero = "src\\main\\java\\com\\example\\trabajojsk\\Ficheros";
         Crear_y_comprobar_fichero(rutaFichero);
 
-
-
+        
 
         if (nombre.equals("SISA")){
             Object o = event.getSource();

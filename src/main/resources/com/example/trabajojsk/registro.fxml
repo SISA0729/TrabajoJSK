@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="503.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
+<HBox prefHeight="503.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="469.0" prefWidth="287.0">
             <children>
@@ -51,7 +50,7 @@
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin></PasswordField>
-                        <Button fx:id="botonContinuar" mnemonicParsing="false" prefWidth="287.0" text="Continuar">
+                        <Button fx:id="botonContinuar" mnemonicParsing="false" onAction="#eventContinuar" prefWidth="287.0" text="Continuar">
                             <font>
                                 <Font size="18.0" />
                             </font>
