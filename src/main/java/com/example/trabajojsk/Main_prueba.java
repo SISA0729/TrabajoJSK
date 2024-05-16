@@ -19,7 +19,7 @@ public class Main_prueba {
     public static boolean ComprobarUsuario (String nombre , String contraseña){
         Scanner johan = new Scanner(System.in);
 
-        String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt ";
+        String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
         ArrayList<String> usuario_Contraseña = new ArrayList<>();
         File fichero = new File(rutaFichero);
         String[] pepe = new String[0];

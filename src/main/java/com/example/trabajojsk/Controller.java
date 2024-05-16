@@ -50,7 +50,7 @@ public class Controller implements Initializable {
         try {
             fw = new FileWriter(fichero,true);
             fw.append("\n"+contra+";");
-            fw.append(nombre+"\n");
+            fw.append(nombre+ " ");
             fw.close();
 
         } catch (IOException e) {
