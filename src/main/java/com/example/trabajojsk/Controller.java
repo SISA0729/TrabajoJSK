@@ -14,7 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
-import static com.example.trabajojsk.Main_prueba.ComprobarUsuario;
+import static com.example.trabajojsk.Metodos_johan.ComprobarUsuario;
 
 
 import java.io.*;
