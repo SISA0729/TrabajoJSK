@@ -44,25 +44,20 @@ public class Controller implements Initializable {
         String nombre = textUsuario.getText();
         String contra = textContrasena.getText();
         Usuario usuario = new Usuario(nombre,contra);
+
+        File fichero = new File("src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt");
         FileWriter fw;
-
         try {
-            FileOutputStream fichero = new FileOutputStream("C:\\Users\\ALCY\\IdeaProjects\\TrabajoJSK\\src\\main\\java\\com\\example\\trabajojsk\\Ficheros\\Usuarios");
-            ObjectOutputStream person = new ObjectOutputStream(fichero);
-            person.writeObject(usuario);
-
-
-            fw = new FileWriter(String.valueOf(fichero));
-            fw.append(";"+nombre+";");
-            fw.append(";"+contra+";");
-
+            fw = new FileWriter(fichero,true);
+            fw.append("\n"+contra+";");
+            fw.append(nombre+"\n");
             fw.close();
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException("File not found", e);
         } catch (IOException e) {
-            throw new RuntimeException("Error initializing stream", e);
+            throw new RuntimeException(e);
         }
+
+
     }
     @FXML
     private void eventLink(ActionEvent event) throws IOException {
