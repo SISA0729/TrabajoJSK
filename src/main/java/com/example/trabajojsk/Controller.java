@@ -14,6 +14,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
+import static com.example.trabajojsk.Main_prueba.ComprobarUsuario;
+
 
 import java.io.*;
 import java.net.URL;
@@ -93,12 +95,13 @@ public class Controller implements Initializable {
     private void eventAction(ActionEvent event) throws IOException {
 
         String nombre = textUsuario.getText();
+        String contraseña = textContrasena.getText();
         String rutaFichero = "src\\main\\java\\com\\example\\trabajojsk\\Ficheros";
         Crear_y_comprobar_fichero(rutaFichero);
 
         
 
-        if (nombre.equals("SISA")){
+        if (ComprobarUsuario(nombre, contraseña)){
             Object o = event.getSource();
             Node node = (Node) o;
             Scene scene1 = node.getScene();
