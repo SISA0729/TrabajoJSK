@@ -1,4 +1,4 @@
-package com.example.trabajojsk;
+package com.example.trabajojsk.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

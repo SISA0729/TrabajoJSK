@@ -1,4 +1,4 @@
-package com.example.trabajojsk;
+package com.example.trabajojsk.Controller;
 
 import com.example.trabajojsk.POO.Usuario;
 import javafx.event.ActionEvent;
@@ -11,9 +11,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
+import org.kordamp.bootstrapfx.scene.layout.Panel;
+
+
 import static com.example.trabajojsk.Metodos_johan.ComprobarUsuario;
 
 
@@ -22,6 +27,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    @FXML
+    private HBox panel1;
     @FXML
     private Hyperlink link;
     @FXML
@@ -34,6 +41,8 @@ public class Controller implements Initializable {
 
     @FXML
     private Button botonIniciar;
+    @FXML
+    private Button INICIARK;
 
     @FXML
     private void eventkey(KeyEvent event){
@@ -89,6 +98,7 @@ public class Controller implements Initializable {
 
     @FXML
     private void eventAction(ActionEvent event) throws IOException {
+        panel1.getStylesheets().add("src\\main\\java\\com\\example\\trabajojsk\\Estilos\\estilo1.css");
 
         String nombre = textUsuario.getText();
         String contraseña = textContrasena.getText();

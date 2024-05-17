@@ -2,13 +2,9 @@ package com.example.trabajojsk;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Stream;
 
-import static com.example.trabajojsk.Controller.Crear_y_comprobar_fichero;
+import static com.example.trabajojsk.Controller.Controller.Crear_y_comprobar_fichero;
 
 public class Metodos_johan {
 

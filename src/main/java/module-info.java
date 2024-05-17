@@ -8,4 +8,6 @@ module com.example.trabajojsk {
 
     opens com.example.trabajojsk to javafx.fxml;
     exports com.example.trabajojsk;
+    exports com.example.trabajojsk.Controller;
+    opens com.example.trabajojsk.Controller to javafx.fxml;
 }

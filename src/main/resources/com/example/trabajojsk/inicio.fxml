@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="503.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
+<HBox fx:id="panel1" prefHeight="503.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller.Controller">
    <children>
       <VBox alignment="CENTER_LEFT" prefHeight="469.0" prefWidth="287.0">
          <children>
@@ -32,7 +32,7 @@
                      </font>
                   </Label>
                   <PasswordField fx:id="textContrasena" onKeyTyped="#eventkey" />
-                  <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#eventAction" prefWidth="287.0" text="Iniciar">
+                  <Button id="INICIARK" fx:id="botonIniciar" mnemonicParsing="false" onAction="#eventAction" prefWidth="287.0" text="Iniciar">
                      <font>
                         <Font size="18.0" />
                      </font>
