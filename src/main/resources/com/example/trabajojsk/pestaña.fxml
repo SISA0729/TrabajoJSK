@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller">
+<BorderPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.PestañaController">
    <left>
       <AnchorPane prefHeight="501.0" prefWidth="209.0" BorderPane.alignment="CENTER">
          <children>
@@ -15,7 +16,7 @@
                           <children>
                               <ImageView fitHeight="122.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
-                                      <Image url="@LOGO-SISA.png" />
+                                      <Image url="@images/LOGO-SISA.png" />
                                   </image>
                               </ImageView>
                         <Label text="Bienvenido a JSK!!" textFill="WHITE">
@@ -27,10 +28,10 @@
                            <children>
                               <AnchorPane prefHeight="361.0" prefWidth="201.0">
                                  <children>
-                                    <Button layoutX="23.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Inicio" />
+                                    <Button fx:id="inicio" layoutX="23.0" layoutY="36.0" mnemonicParsing="false" onAction="#eventInicio" prefHeight="25.0" prefWidth="163.0" text="Inicio" />
                                     <Button layoutX="23.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Menu" />
                                     <Button layoutX="23.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Puntos" />
-                                    <Button layoutX="23.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Salir" />
+                                    <Button fx:id="salir" layoutX="23.0" layoutY="202.0" mnemonicParsing="false" onAction="#eventSalir" prefHeight="25.0" prefWidth="163.0" text="Salir" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -40,6 +41,93 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-       
+
    </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar layoutX="17.0" layoutY="59.0" prefHeight="46.0" prefWidth="558.0">
+              <items>
+                <Button fx:id="botonFutbol" mnemonicParsing="false" onAction="#eventFutbol" prefWidth="140.0" style="-fx-background-color: #42FF33;" text="Futbol">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Fútbol.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botonBaloncesto" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#eventBaloncesto" prefWidth="130.0" style="-fx-background-color: #42FF33;" text="Baloncesto">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Baloncesto.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="94.0" layoutY="12.0" mnemonicParsing="false" prefWidth="130.0" style="-fx-background-color: #42FF33;" text="Tenis">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Tenis.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="178.0" layoutY="12.0" mnemonicParsing="false" prefWidth="130.0" style="-fx-background-color: #42FF33;" text="Voley">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Voley.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+              </items>
+            </ToolBar>
+            <Label layoutX="246.0" layoutY="30.0" text="DEPORTES" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="246.0" layoutY="142.0" text="Pista" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <TextField fx:id="textLocalidad" layoutX="90.0" layoutY="138.0" onAction="#eventLocalidad" promptText="Madrd" />
+            <TextField layoutX="289.0" layoutY="138.0" prefHeight="25.0" prefWidth="131.0" promptText="Cesped/Sala" />
+            <TextField layoutX="478.0" layoutY="138.0" prefHeight="25.0" prefWidth="91.0" promptText="00:00" />
+            <Label layoutX="17.0" layoutY="142.0" text="Localidad" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="433.0" layoutY="142.0" text="Hora" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <LineChart layoutX="26.0" layoutY="222.0" prefHeight="265.0" prefWidth="319.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Label layoutX="97.0" layoutY="205.0" text="Estadistica de tus partidas" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TableView layoutX="369.0" layoutY="205.0" prefHeight="262.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="100.0" text="Usuarios" />
+                <TableColumn prefWidth="100.0" text="Hora" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

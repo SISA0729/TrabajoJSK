@@ -39,6 +39,7 @@ public class Controller implements Initializable {
     private void eventkey(KeyEvent event){
 
     }
+
     @FXML
     private void eventContinuar(){
         String nombre = textUsuario.getText();

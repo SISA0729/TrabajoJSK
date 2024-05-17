@@ -63,7 +63,7 @@
          <children>
             <ImageView fitHeight="405.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@LOGO-SISA.png" />
+                  <Image url="@images/LOGO-SISA.png" />
                </image>
             </ImageView>
          </children></VBox>
