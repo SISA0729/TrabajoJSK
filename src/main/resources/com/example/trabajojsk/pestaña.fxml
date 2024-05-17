@@ -16,7 +16,7 @@
                           <children>
                               <ImageView fitHeight="122.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
-                                      <Image url="@images/LOGO-SISA.png" />
+                                      <Image url="@images/LOGO/LOGO-SISA.png" />
                                   </image>
                               </ImageView>
                         <Label text="Bienvenido a JSK!!" textFill="WHITE">
@@ -52,7 +52,7 @@
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Fútbol.png" />
+                              <Image url="@images/Iconos/Fútbol.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -61,7 +61,7 @@
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Baloncesto.png" />
+                              <Image url="@images/Iconos/Baloncesto.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -70,7 +70,7 @@
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Tenis.png" />
+                              <Image url="@images/Iconos/Tenis.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -79,7 +79,7 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Voley.png" />
+                              <Image url="@images/Iconos/Voley.png" />
                            </image>
                         </ImageView>
                      </graphic>

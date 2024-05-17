@@ -15,7 +15,7 @@
                             <children>
                                 <ImageView fitHeight="122.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@images/LOGO-SISA.png" />
+                                        <Image url="@images/LOGO/LOGO-SISA.png" />
                                     </image>
                                 </ImageView>
                                 <Label text="Bienvenido a JSK!!" textFill="WHITE">
@@ -51,7 +51,7 @@
                             <graphic>
                                 <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@images/Fútbol.png" />
+                                        <Image url="@images/Iconos/Fútbol.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -60,7 +60,7 @@
                             <graphic>
                                 <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@images/Baloncesto.png" />
+                                        <Image url="@images/Iconos/Baloncesto.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -69,7 +69,7 @@
                             <graphic>
                                 <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@images/Tenis.png" />
+                                        <Image url="@images/Iconos/Tenis.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -78,7 +78,7 @@
                             <graphic>
                                 <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@images/Voley.png" />
+                                        <Image url="@images/Iconos/Voley.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -107,15 +107,34 @@
                         <Font name="Arial Black" size="12.0" />
                     </font>
                 </Label>
-            <ScrollPane layoutX="23.0" layoutY="181.0" prefHeight="300.0" prefWidth="549.0">
+            <ScrollPane layoutX="23.0" layoutY="181.0" prefHeight="289.0" prefWidth="549.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="534.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="517.0">
                      <children>
-                        <ImageView fitHeight="138.0" fitWidth="199.0" layoutX="42.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="157.0" fitWidth="233.0" layoutX="21.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/pistaF2.jpg" />
+                              <Image url="@images/Futbol/pistaF1.jpg" />
                            </image>
                         </ImageView>
+                        <Hyperlink layoutX="17.0" layoutY="187.0" prefHeight="25.0" prefWidth="241.0" text="Los Angeles Getafe, Pista futbol 7" />
+                        <ImageView fitHeight="156.0" fitWidth="243.0" layoutX="291.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Futbol/pistaF3.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Hyperlink layoutX="295.0" layoutY="187.0" prefHeight="25.0" prefWidth="226.0" text="Complutense, Pista futbol sala" />
+                        <ImageView fitHeight="155.0" fitWidth="227.0" layoutX="294.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Futbol/pistaF4.jpg" />
+                           </image>
+                        </ImageView>
+                        <Hyperlink layoutX="299.0" layoutY="389.0" prefHeight="25.0" prefWidth="226.0" text="San Vicente de Raul, Pista futbol 7" />
+                        <ImageView fitHeight="158.0" fitWidth="237.0" layoutX="19.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Futbol/pistaF5.jpg" />
+                           </image>
+                        </ImageView>
+                        <Hyperlink layoutX="19.0" layoutY="394.0" prefHeight="25.0" prefWidth="236.0" text="Coslada, Pista futbol sala cubierta" />
                      </children>
                   </AnchorPane>
               </content>
