@@ -2,6 +2,7 @@ package com.example.trabajojsk.Controller;
 
 import com.example.trabajojsk.POO.Usuario;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -56,7 +57,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void eventContinuar(){
+    private void eventContinuar(ActionEvent event) throws IOException {
         //creando el usuario
         String nombre = textUsuario.getText();
         String contra = textContrasena.getText();
@@ -66,11 +67,21 @@ public class Controller implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ERROR!");
             alert.setHeaderText("Usuario ya está registrado");
-            alert.setContentText("Por favor, crie otro nombre de usuario para poder acceder");
+            alert.setContentText("Por favor, cree otro nombre de usuario para poder acceder");
             alert.show();
         } else {
             usuarios.add(usuario);
             escreverUsuariosNoArquivo(usuario);
+
+            Object s = event.getSource();
+            Node node = (Node) s;
+            Scene scene1 = node.getScene();
+            Window window = scene1.getWindow();
+            Stage stage = (Stage) window;
+
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/inicio.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
         }
     }
 
