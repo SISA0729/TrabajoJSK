@@ -21,10 +21,13 @@ import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 import static com.example.trabajojsk.Metodos_johan.ComprobarUsuario;
 
+import static com.example.trabajojsk.Main_Kamilly.comprobarUsuarioKami;
+
 
 import java.io.*;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
+
 
 public class Controller implements Initializable {
     @FXML
@@ -45,30 +48,65 @@ public class Controller implements Initializable {
     private Button INICIARK;
 
     @FXML
+    private ArrayList<Usuario> usuarios;
+
+    @FXML
     private void eventkey(KeyEvent event){
 
     }
 
     @FXML
     private void eventContinuar(){
+        //creando el usuario
         String nombre = textUsuario.getText();
         String contra = textContrasena.getText();
         Usuario usuario = new Usuario(nombre,contra);
 
-        File fichero = new File("src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt");
-        FileWriter fw;
-        try {
-            fw = new FileWriter(fichero,true);
-            fw.append("\n"+contra+";");
-            fw.append(nombre+ " ");
-            fw.close();
+        if (usuarios.contains(usuario)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR!");
+            alert.setHeaderText("Usuario ya está registrado");
+            alert.setContentText("Por favor, crie otro nombre de usuario para poder acceder");
+            alert.show();
+        } else {
+            usuarios.add(usuario);
+            escreverUsuariosNoArquivo(usuario);
+        }
+    }
 
+
+    private void escreverUsuariosNoArquivo(Usuario usuario) {
+        String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
+        File fichero = new File(rutaFichero.trim());
+
+        try (FileWriter fw = new FileWriter(fichero, true)) {
+            fw.append(usuario.getContraseña() + ";" + usuario.getUsuario() + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
+
+    private void carregarUsuariosDoArquivo() {
+        String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
+        File fichero = new File(rutaFichero.trim());
+
+        try (Scanner lector = new Scanner(fichero)) {
+            while (lector.hasNext()) {
+                String linea = lector.nextLine();
+                String[] partes = linea.split(";");
+                if (partes.length == 2) {
+                    String contraseña = partes[0].trim();
+                    String usuario = partes[1].trim();
+                    usuarios.add(new Usuario(usuario, contraseña));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
     @FXML
     private void eventLink(ActionEvent event) throws IOException {
 
@@ -98,7 +136,6 @@ public class Controller implements Initializable {
 
     @FXML
     private void eventAction(ActionEvent event) throws IOException {
-        panel1.getStylesheets().add("src\\main\\java\\com\\example\\trabajojsk\\Estilos\\estilo1.css");
 
         String nombre = textUsuario.getText();
         String contraseña = textContrasena.getText();
@@ -130,7 +167,8 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        usuarios = new ArrayList<>();
+        carregarUsuariosDoArquivo();
     }
 
 
