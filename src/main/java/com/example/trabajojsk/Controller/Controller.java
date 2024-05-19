@@ -146,15 +146,16 @@ public class Controller implements Initializable {
 
     @FXML
     private void eventAction(ActionEvent event) throws IOException {
-
         String nombre = textUsuario.getText();
         String contraseña = textContrasena.getText();
         String rutaFichero = "src\\main\\java\\com\\example\\trabajojsk\\Ficheros";
         Crear_y_comprobar_fichero(rutaFichero);
 
-        
+        int comprobarResultado = ComprobarUsuario(nombre,contraseña);
 
-        if (ComprobarUsuario(nombre, contraseña)){
+
+
+        if (comprobarResultado == 2){
             Object o = event.getSource();
             Node node = (Node) o;
             Scene scene1 = node.getScene();
@@ -167,8 +168,15 @@ public class Controller implements Initializable {
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error!");
-            alert.setHeaderText("Usuario no registrado");
-            alert.setContentText("Crea un usuario para poder acceder");
+
+            if (comprobarResultado == 0){
+                alert.setHeaderText("Usuario no registrado");
+                alert.setContentText("Crea un usuario para poder acceder");
+            } else if (comprobarResultado == 1) {
+                alert.setHeaderText("Contraseña incorrecta");
+                alert.setContentText("Digite la contraseña correcta para poder acceder");
+            }
+
             alert.show();
 
         }

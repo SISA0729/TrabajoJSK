@@ -25,10 +25,8 @@ public class Metodos_johan {
      *  y este metodo devuelve un booolean
      *
      */
-    public static boolean ComprobarUsuario (String nombre , String contraseña) {
-
+    public static int ComprobarUsuario (String nombre , String contraseña) {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
-        Scanner johan = new Scanner(System.in);
         ArrayList<String> usuario_Contraseña = new ArrayList<>();
         File fichero = new File(rutaFichero.trim());
         String[] pepe = new String[0];
@@ -45,7 +43,9 @@ public class Metodos_johan {
                         pepe = new String[]{clave, valor};
                         if (pepe[1].equals(nombre)) {
                             if (pepe[0].equals(contraseña)) {
-                                return true;
+                                return 2; // usuário registrado, con la contraseña y el usuario correctos.
+                            } else {
+                                return 1; // usuário registrado,sin embargo la contraseña está incorrecta.
                             }
                         }
                     }
@@ -56,7 +56,7 @@ public class Metodos_johan {
         } else {
             System.out.println("no entro");
         }
-        return false;
+        return 0; // usuario no registrado
     }
 
         /*
@@ -71,8 +71,8 @@ public class Metodos_johan {
         }
         /* este metodo subirpuntosGrafica nos muestra los puntos que tiene en entos momentos los usuarios */
         public static void MostrarpuntosGrafica (LineChart<?, ?> lista_puntos,String nombre,String contraseña){
-
-            if (ComprobarUsuario(nombre,contraseña)){
+            int comprobarResultado = ComprobarUsuario(nombre,contraseña);
+            if (comprobarResultado == 2){
 
                 Object[] puntos = verPuntos(nombre,contraseña);
 
