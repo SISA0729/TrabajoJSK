@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -31,12 +32,20 @@ public class PestañaController implements Initializable {
     @FXML
     private Button salir;
 
+    /* Crea amos una variable para posicionar los puntos de nuestros clientes*/
+    @FXML
+    private LineChart<?, ?> lista_puntos;
+
     @FXML
     private void eventSalir(ActionEvent event){
         System.exit(0);
     }
     @FXML
     private void eventInicio(ActionEvent event) throws IOException {
+
+
+
+
 
 
         Object f = event.getSource();
@@ -48,6 +57,7 @@ public class PestañaController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+
     }
     @FXML
     private void eventBaloncesto(ActionEvent event) throws IOException {

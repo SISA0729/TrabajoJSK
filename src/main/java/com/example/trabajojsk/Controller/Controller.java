@@ -52,9 +52,6 @@ public class Controller implements Initializable {
     @FXML
     private ArrayList<Usuario> usuarios;
 
-    /* Crea amos una variable para posicionar los puntos de nuestros clientes*/
-    @FXML
-    private LineChart<?, ?> lista_puntos;
 
     @FXML
     private void eventkey(KeyEvent event){
