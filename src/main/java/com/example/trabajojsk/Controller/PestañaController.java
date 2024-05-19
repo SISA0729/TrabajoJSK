@@ -1,5 +1,6 @@
 package com.example.trabajojsk.Controller;
 
+import com.example.trabajojsk.Metodos_johan;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +15,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-
+import com.example.trabajojsk.Metodos_johan.*;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ResourceBundle;
+import com.example.trabajojsk.Controller.Controller.*;
 
-public class PestañaController implements Initializable {
+public class PestañaController implements Initializable  {
     @FXML
     private TextField textLocalidad;
     @FXML
@@ -42,12 +44,6 @@ public class PestañaController implements Initializable {
     }
     @FXML
     private void eventInicio(ActionEvent event) throws IOException {
-
-
-
-
-
-
         Object f = event.getSource();
         Node node = (Node) f;
         Scene scene1 = node.getScene();
@@ -93,6 +89,8 @@ public class PestañaController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Metodos_johan. MostrarpuntosGrafica(lista_puntos,"johan","1234");
 
     }
 }

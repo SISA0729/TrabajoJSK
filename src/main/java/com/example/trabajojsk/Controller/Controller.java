@@ -58,6 +58,7 @@ public class Controller implements Initializable {
 
     }
 
+
     @FXML
     private void eventContinuar(ActionEvent event) throws IOException {
         //creando el usuario
@@ -185,6 +186,8 @@ public class Controller implements Initializable {
         File fichero = new File(ruta);
        return fichero.exists();    
     }
+
+
 
 
 }
