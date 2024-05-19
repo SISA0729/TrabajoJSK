@@ -1,33 +1,5 @@
 package com.example.trabajojsk.Controller;
 
-import com.example.trabajojsk.Metodos_johan;
-import com.example.trabajojsk.POO.Usuario;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.LineChart;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.DrawMode;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-import org.controlsfx.control.action.Action;
-import org.kordamp.bootstrapfx.scene.layout.Panel;
-
-
-import static com.example.trabajojsk.Metodos_johan.*;
-
-import static com.example.trabajojsk.Main_Kamilly.comprobarUsuarioKami;
-
-
 import java.io.*;
 import java.net.URL;
 import java.util.*;
@@ -59,7 +31,7 @@ public class Controller implements Initializable {
      */
     @FXML
     private void eventkey(KeyEvent event){
-        System.out.println("sisa");
+
     }
 
 
