@@ -15,7 +15,7 @@ public class App extends Application {
         Scene scene = new Scene(root);
 
         scene.getStylesheets().add(getClass().getResource("Estilos/style.css").toExternalForm()); //estilo
-        stage.setTitle("JSK"); //estilo
+        stage.setTitle("JSK");
         stage.setScene(scene);
         stage.show();
 

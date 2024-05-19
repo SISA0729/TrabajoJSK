@@ -1,5 +1,6 @@
 package com.example.trabajojsk.Controller;
 
+import com.example.trabajojsk.Metodos_johan;
 import com.example.trabajojsk.POO.Usuario;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -15,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.DrawMode;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.controlsfx.control.action.Action;
@@ -52,7 +54,9 @@ public class Controller implements Initializable {
     @FXML
     private ArrayList<Usuario> usuarios;
 
-
+    /**
+     * ===================================== INICIO Y REGISTRO  ======================================================
+     */
     @FXML
     private void eventkey(KeyEvent event){
 
@@ -181,7 +185,65 @@ public class Controller implements Initializable {
 
         }
     }
+    /**
+     * ===============================================================================================================
+     */
 
+
+    /**
+     * ========================================= PESTAÑA PRINCIPAL  =============================================
+     */
+
+    @FXML
+    private void eventSalir(ActionEvent event){
+        System.exit(0);
+    }
+    @FXML
+    private void eventInicio(ActionEvent event) throws IOException {
+        Object f = event.getSource();
+        Node node = (Node) f;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        Metodos_johan.MostrarpuntosGrafica(lista_puntos,textUsuario.getText(),textContrasena.getText());
+
+    }
+    @FXML
+    private void eventBaloncesto(ActionEvent event) throws IOException {
+        Object f = event.getSource();
+        Node node = (Node) f;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/baloncesto.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+    @FXML
+    private void eventFutbol(ActionEvent event) throws IOException {
+        Object f = event.getSource();
+        Node node = (Node) f;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/futbol.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+    @FXML
+    private void eventLocalidad(KeyEvent event){
+        String buscar = textLocalidad.getText().trim();
+        if (!buscar.equals("")){
+            System.out.println(buscar);
+        }
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
