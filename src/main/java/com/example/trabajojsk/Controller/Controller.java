@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
@@ -20,7 +21,7 @@ import org.controlsfx.control.action.Action;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 
-import static com.example.trabajojsk.Metodos_johan.ComprobarUsuario;
+import static com.example.trabajojsk.Metodos_johan.*;
 
 import static com.example.trabajojsk.Main_Kamilly.comprobarUsuarioKami;
 
@@ -50,6 +51,10 @@ public class Controller implements Initializable {
 
     @FXML
     private ArrayList<Usuario> usuarios;
+
+    /* Crea amos una variable para posicionar los puntos de nuestros clientes*/
+    @FXML
+    private LineChart<?, ?> lista_puntos;
 
     @FXML
     private void eventkey(KeyEvent event){
@@ -88,9 +93,7 @@ public class Controller implements Initializable {
 
     private void escreverUsuariosNoArquivo(Usuario usuario) {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
-        File fichero = new File(rutaFichero.trim());
-
-        try (FileWriter fw = new FileWriter(fichero, true)) {
+        try (FileWriter fw = new FileWriter(crearYComprobarFichero(rutaFichero), true)) {
             fw.append(usuario.getContraseña() + ";" + usuario.getUsuario() + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -99,9 +102,7 @@ public class Controller implements Initializable {
 
     private void carregarUsuariosDoArquivo() {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
-        File fichero = new File(rutaFichero.trim());
-
-        try (Scanner lector = new Scanner(fichero)) {
+        try (Scanner lector = new Scanner(crearYComprobarFichero(rutaFichero))) {
             while (lector.hasNext()) {
                 String linea = lector.nextLine();
                 String[] partes = linea.split(";");

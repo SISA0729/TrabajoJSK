@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -36,6 +37,8 @@ public class PestañaController implements Initializable {
     }
     @FXML
     private void eventInicio(ActionEvent event) throws IOException {
+
+
         Object f = event.getSource();
         Node node = (Node) f;
         Scene scene1 = node.getScene();

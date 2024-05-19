@@ -108,7 +108,7 @@
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Label>
-            <LineChart layoutX="26.0" layoutY="222.0" prefHeight="265.0" prefWidth="319.0">
+            <LineChart fx:id="lista_puntos" layoutX="26.0" layoutY="222.0" prefHeight="265.0" prefWidth="319.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>

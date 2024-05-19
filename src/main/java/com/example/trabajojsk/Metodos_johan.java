@@ -16,7 +16,7 @@ public class Metodos_johan {
 
 
     /**
-     *  Este metodo (ComprobarUsuarios) no ayuda ah verificar si los usuarios estan en nuestra base de datos (fichero);
+     *  Este metodo (ComprobarUsuarios) nos ayuda ah verificar si los usuarios estan en nuestra base de datos (fichero);
      *  Recive paremetos nombre, contraseña;
      *  y este metodo devuelve un booolean
      *
@@ -39,8 +39,8 @@ public class Metodos_johan {
                         String clave = partes[0].trim();
                         String valor = partes[1].trim();
                         pepe = new String[]{clave, valor};
-                        if (pepe[1].equalsIgnoreCase(nombre)) {
-                            if (pepe[0].equalsIgnoreCase(contraseña)) {
+                        if (pepe[1].equals(nombre)) {
+                            if (pepe[0].equals(contraseña)) {
                                 return true;
                             }
                         }
@@ -54,10 +54,16 @@ public class Metodos_johan {
         }
         return false;
     }
-        private static boolean crearYComprobarFichero(String rutaFichero) {
+
+        /*
+        * cearYComprobarfichero nos ayuda a crear y ver si la ruta esta bien formulada
+        * */
+         public static File crearYComprobarFichero(String rutaFichero) {
             // Implementar la lógica para crear y comprobar el fichero
             // Retornar true si el fichero existe y es válido, de lo contrario, false.
-            return new File(rutaFichero).exists();
+             File fichero = new File(rutaFichero.trim());
+             fichero.exists();
+            return fichero;
         }
 
 }
