@@ -51,7 +51,7 @@ public class Controller implements Initializable {
     private Hyperlink flecha;
 
     @FXML
-    private TextField textUsuario;
+    public TextField textUsuario;
 
     @FXML
     private TextField textContrasena;
@@ -81,7 +81,10 @@ public class Controller implements Initializable {
     private Button salir;
 
     @FXML
-    private LineChart<?, ?> lista_puntos;
+    private  Button handleButtonAction;
+
+    @FXML
+    private LineChart<Number, Number> lista_puntos;
 
 
     /**
@@ -101,6 +104,10 @@ public class Controller implements Initializable {
         Usuario usuario = new Usuario(nombre,contra);
 
         if (usuarios.contains(usuario)) {
+
+
+
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ERROR!");
             alert.setHeaderText("Usuario ya está registrado");
@@ -187,11 +194,24 @@ public class Controller implements Initializable {
         String rutaFichero = "src\\main\\java\\com\\example\\trabajojsk\\Ficheros";
         Crear_y_comprobar_fichero(rutaFichero);
 
-        int comprobarResultado = ComprobarUsuario(nombre,contraseña);
+        int comprobarResultado = ComprobarUsuario(nombre, contraseña);
+
+
+        if (comprobarResultado == 2) {
+
+            String usuario_txt = "com\\example\\trabajojsk\\Ficheros\\Usuario_Actual.txt";
+            String contenido = "Este es el contenido que quiero escribir en el archivo";
+
+            try (FileWriter writer = new FileWriter(usuario_txt)) {
+                writer.append(contenido);
+            } catch (IOException e) {
+                System.out.println("Ocurrió un error al escribir en el archivo: " + e.getMessage());
+            }
 
 
 
-        if (comprobarResultado == 2){
+
+
             Object o = event.getSource();
             Node node = (Node) o;
             Scene scene1 = node.getScene();
@@ -201,6 +221,10 @@ public class Controller implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+
+
+
+
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error!");
@@ -232,6 +256,7 @@ public class Controller implements Initializable {
     }
     @FXML
     private void eventInicio(ActionEvent event) throws IOException {
+
         Object f = event.getSource();
         Node node = (Node) f;
         Scene scene1 = node.getScene();
@@ -243,24 +268,7 @@ public class Controller implements Initializable {
         stage.setScene(scene);
 
         //ArrayList<Usuario> usuario = carregarUsuariosDoArquivo();
-        String nombre = textUsuario.getText();
-        Object[] puntos = verPuntos("johan","1234");
 
-
-        XYChart.Series series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data("1",puntos[1]));
-        series.getData().add(new XYChart.Data("2",puntos[2]));
-        series.getData().add(new XYChart.Data("4",puntos[3]));
-        series.getData().add(new XYChart.Data("4",puntos[4]));
-
-        if (lista_puntos != null) {
-            lista_puntos.getData().addAll(series);
-        } else {
-            System.out.println("lista_puntos es null");
-        }
-
-
-        series.setName((String) puntos[0]);
 
 
     }
@@ -300,11 +308,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usuarios = new ArrayList<>();
-
-
-         carregarUsuariosDoArquivo();
-
-
+        carregarUsuariosDoArquivo();
 
     }
 
@@ -313,6 +317,35 @@ public class Controller implements Initializable {
         File fichero = new File(ruta);
        return fichero.exists();    
     }
+    @FXML
+    private TextField user;
+
+    @FXML
+    private void handleButtonAction(ActionEvent event) throws IOException {
+        lista_puntos.getData().clear(); // Limpiar los datos antiguos
+
+       // System.out.println(carregarUsuariosDoArquivo().get(1));
+
+
+        Object[] puntos = verPuntos("johan","1234");
+
+
+        XYChart.Series series = new XYChart.Series<>();
+        series.getData().add(new XYChart.Data(1,puntos[1]));
+        series.getData().add(new XYChart.Data(2,puntos[2]));
+        series.getData().add(new XYChart.Data(3,puntos[3]));
+        series.getData().add(new XYChart.Data(4,puntos[4]));
+
+
+
+
+        series.setName("JOHAN");
+
+
+        lista_puntos.getData().add(series);
+    }
+
+
 
 
 
