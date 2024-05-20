@@ -1,6 +1,41 @@
 package com.example.trabajojsk.Controller;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.net.URL;
+import java.util.*;
+
+
+import com.example.trabajojsk.Metodos_johan;
+import com.example.trabajojsk.POO.Usuario;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.DrawMode;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+import org.controlsfx.control.action.Action;
+import org.kordamp.bootstrapfx.scene.layout.Panel;
+
+
+import static com.example.trabajojsk.Metodos_johan.*;
+
+import static com.example.trabajojsk.Main_Kamilly.comprobarUsuarioKami;
+
+
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 
@@ -8,23 +43,46 @@ import java.util.*;
 public class Controller implements Initializable {
     @FXML
     private HBox panel1;
+
     @FXML
     private Hyperlink link;
+
     @FXML
     private Hyperlink flecha;
 
     @FXML
     private TextField textUsuario;
+
     @FXML
     private TextField textContrasena;
 
     @FXML
     private Button botonIniciar;
+
     @FXML
     private Button INICIARK;
 
     @FXML
     private ArrayList<Usuario> usuarios;
+
+    @FXML
+    private TextField textLocalidad;
+
+    @FXML
+    private Button botonFutbol;
+
+    @FXML
+    private Button botonBaloncesto;
+
+    @FXML
+    private Button inicio;
+
+    @FXML
+    private Button salir;
+
+    @FXML
+    private LineChart<?, ?> lista_puntos;
+
 
     /**
      * ===================================== INICIO Y REGISTRO  ======================================================
@@ -74,7 +132,7 @@ public class Controller implements Initializable {
         }
     }
 
-    private void carregarUsuariosDoArquivo() {
+    private ArrayList<Usuario> carregarUsuariosDoArquivo() {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
         try (Scanner lector = new Scanner(crearYComprobarFichero(rutaFichero))) {
             while (lector.hasNext()) {
@@ -84,11 +142,13 @@ public class Controller implements Initializable {
                     String contraseña = partes[0].trim();
                     String usuario = partes[1].trim();
                     usuarios.add(new Usuario(usuario, contraseña));
+                    return usuarios;
                 }
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        return null;
     }
 
 
@@ -181,7 +241,27 @@ public class Controller implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        Metodos_johan.MostrarpuntosGrafica(lista_puntos,textUsuario.getText(),textContrasena.getText());
+
+        //ArrayList<Usuario> usuario = carregarUsuariosDoArquivo();
+        String nombre = textUsuario.getText();
+        Object[] puntos = verPuntos("johan","1234");
+
+
+        XYChart.Series series = new XYChart.Series<>();
+        series.getData().add(new XYChart.Data("1",puntos[1]));
+        series.getData().add(new XYChart.Data("2",puntos[2]));
+        series.getData().add(new XYChart.Data("4",puntos[3]));
+        series.getData().add(new XYChart.Data("4",puntos[4]));
+
+        if (lista_puntos != null) {
+            lista_puntos.getData().addAll(series);
+        } else {
+            System.out.println("lista_puntos es null");
+        }
+
+
+        series.setName((String) puntos[0]);
+
 
     }
     @FXML
@@ -220,7 +300,12 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usuarios = new ArrayList<>();
-        carregarUsuariosDoArquivo();
+
+
+         carregarUsuariosDoArquivo();
+
+
+
     }
 
 
