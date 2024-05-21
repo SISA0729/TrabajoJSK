@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller.Controller">
+<BorderPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller.Controller_pestaña">
     <left>
         <AnchorPane prefHeight="501.0" prefWidth="209.0" BorderPane.alignment="CENTER">
             <children>

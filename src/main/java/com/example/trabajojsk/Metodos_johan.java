@@ -7,9 +7,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
-import com.example.trabajojsk.Controller.Controller.*;
-import static com.example.trabajojsk.Controller.Controller.Crear_y_comprobar_fichero;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import static com.example.trabajojsk.Controller.Controller_pestaña.Crear_y_comprobar_fichero;
 
 public class Metodos_johan {
 

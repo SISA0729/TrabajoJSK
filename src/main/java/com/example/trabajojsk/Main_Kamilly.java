@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.example.trabajojsk.Controller.Controller.Crear_y_comprobar_fichero;
+
 
 public class Main_Kamilly {
    public  static String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
