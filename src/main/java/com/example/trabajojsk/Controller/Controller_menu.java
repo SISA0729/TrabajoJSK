@@ -13,13 +13,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static com.example.trabajojsk.Controller.Controller.*;
+import static com.example.trabajojsk.Metodos_johan.octener_el_usuario_actual;
+import static com.example.trabajojsk.Controller.Controller_pestaña.Crear_y_comprobar_fichero;
+import static com.example.trabajojsk.Main_Kamilly.getUsuario_Actual;
 
 public class Controller_menu {
     @FXML
     public Controller registroController;
+
+    private Usuario usuarioAtual;
 
     public Controller_menu() {
         this.registroController = new Controller();
@@ -113,35 +121,47 @@ public class Controller_menu {
         this.registroController = registroController;
     }
 
+
+
     @FXML
     public void initialize() {
         ArrayList<Usuario> usuarios = registroController.carregarUsuariosDoRegistro();
-        Usuario usuario1 = registroController.carregarUsuariosDoRegistro().get(0);
-        if (usuario1 != null) {
-            Usuario usuario = usuarios.get(0);
-
-            Text text1 = new Text(usuario.getUsuario());
-            nombreUsuario1.getChildren().clear();
-            nombreUsuario1.getChildren().add(text1);
-
-            Text text2 = new Text(usuario.getUsuario());
-            nombreUsuario2.getChildren().clear();
-            nombreUsuario2.getChildren().add(text2);
-
-            Text text3 = new Text(usuario.getContraseña());
-            contraseña.getChildren().clear();
-            contraseña.getChildren().add(text3);
-
-            Text text4 = new Text(usuario.getCorreoElectronico());
-            correoElectronico.getChildren().clear();
-            correoElectronico.getChildren().add(text4);
-
-            Text text5 = new Text(usuario.getNombre() +" "+ usuario.getApellidos());
-            nombre.getChildren().clear();
-            nombre.getChildren().add(text5);
-
+        String nomeUsuarioAtual = getUsuario_Actual();
+        if (nomeUsuarioAtual == null) {
+            System.out.println("Não foi possível obter o nome do usuário atual.");
+            return;
         }
+        nomeUsuarioAtual = nomeUsuarioAtual.trim();
+        Usuario usuario = null;
+        for (Usuario u : usuarios) {
+            if (u.getUsuario().equals(nomeUsuarioAtual)) {
+                usuario = u;
+                break;
+            }
+        }
+        if (usuario == null) {
+            System.out.println("O usuário atual não foi encontrado na lista de usuários.");
+            return;
+        }
+        Text text1 = new Text(usuario.getUsuario());
+        nombreUsuario1.getChildren().clear();
+        nombreUsuario1.getChildren().add(text1);
 
+        Text text2 = new Text(usuario.getUsuario());
+        nombreUsuario2.getChildren().clear();
+        nombreUsuario2.getChildren().add(text2);
+
+        Text text3 = new Text(usuario.getContraseña());
+        contraseña.getChildren().clear();
+        contraseña.getChildren().add(text3);
+
+        Text text4 = new Text(usuario.getCorreoElectronico());
+        correoElectronico.getChildren().clear();
+        correoElectronico.getChildren().add(text4);
+
+        Text text5 = new Text(usuario.getNombre() +" "+ usuario.getApellidos());
+        nombre.getChildren().clear();
+        nombre.getChildren().add(text5);
     }
 
 

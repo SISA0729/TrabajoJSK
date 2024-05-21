@@ -14,7 +14,10 @@ import java.util.Scanner;
 public class Main_Kamilly {
    public  static String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
     public  static void main (String[] args){
-        ArrayList<Usuario> usuarios = comprobarUsuarioKami();
+        //ArrayList<Usuario> usuarios = comprobarUsuarioKami();
+        System.out.println(getUsuario_Actual());
+        String nomeUsuarioAtual = getUsuario_Actual();
+        System.out.println(nomeUsuarioAtual);
     }
 
     public static ArrayList<Usuario> comprobarUsuarioKami () {
@@ -58,4 +61,22 @@ public class Main_Kamilly {
         // Retornar true si el fichero existe y es válido, de lo contrario, false.
         return new File(rutaFichero).exists();
     }
+
+    public static String getUsuario_Actual (){
+        try{
+            File usuarioActual = new File("src/main/java/com/example/trabajojsk/Ficheros/Usuario_Actual.txt");
+            Scanner leerUsuario = new Scanner(usuarioActual);
+
+            while (leerUsuario.hasNext()) {
+                String linea = leerUsuario.nextLine();
+
+                return linea;
+            }
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

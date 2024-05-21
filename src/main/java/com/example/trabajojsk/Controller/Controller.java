@@ -158,8 +158,9 @@ public class Controller implements Initializable {
     }
 
     public ArrayList<Usuario> carregarUsuariosDoRegistro() {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Registro.txt";
-        try (Scanner lector = new Scanner(crearYComprobarFichero(rutaFichero))) {
+        try (Scanner lector = new Scanner(new File(rutaFichero))) {
             while (lector.hasNext()) {
                 String linea = lector.nextLine();
                 String[] partes = linea.split(";");
@@ -170,13 +171,12 @@ public class Controller implements Initializable {
                     String apellidos = partes[1].trim();
                     String correo = partes[2].trim();
                     usuarios.add(new Usuario(nombre,apellidos,correo,usuario,contraseña));
-                    return usuarios;
                 }
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return usuarios;
     }
 
 

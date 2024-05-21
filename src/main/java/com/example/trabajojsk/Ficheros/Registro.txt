@@ -1,8 +1,3 @@
-Kamilly;Brito;kamilly@gmail.com;kami;1234
-Julio;Alberto;juBeto@gmail.com;julinho;1234
-Anthony;Bridgerton;Anthony@gmail.com;Ant;1234
-Benedict;Bridgerton;Bene@gmail.com;Bene;1234
-MIchael;Bridgerton;michael@gmail.com;Michael;1234
-Joao;Guilerme;Joao123@gmail.com;Jao;1234
-Hitalo;Gomez;HitaloGomes@gmail.com;Hitalo;1234
-Kamilly;Brito;kamilly@gmail.com;kami;1234
+
+Kamilly;Brito;kami@gmail.com;kamilly;1234
+Cadu;Fernandez;cafe@gmail.com;cafe;1234

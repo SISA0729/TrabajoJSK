@@ -1,7 +1,2 @@
-1234;pepe
-1234;johan
-1234;sisa
 1234;kamilly
-1234;Jao
-1234;Hitalo
-1234;kami
+1234;cafe
