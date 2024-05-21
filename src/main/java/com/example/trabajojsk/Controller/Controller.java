@@ -104,10 +104,6 @@ public class Controller implements Initializable {
         Usuario usuario = new Usuario(nombre,contra);
 
         if (usuarios.contains(usuario)) {
-
-
-
-
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ERROR!");
             alert.setHeaderText("Usuario ya está registrado");
@@ -132,8 +128,14 @@ public class Controller implements Initializable {
 
     private void escreverUsuariosNoArquivo(Usuario usuario) {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
+        String rutaPuntos = "src/main/java/com/example/trabajojsk/Ficheros/Puntos.txt";
         try (FileWriter fw = new FileWriter(crearYComprobarFichero(rutaFichero), true)) {
             fw.append(usuario.getContraseña() + ";" + usuario.getUsuario() + "\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try (FileWriter puntos_subir = new FileWriter((rutaPuntos),true)){
+            puntos_subir.append(usuario.getUsuario() + ",0,0,0,5" + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -333,7 +335,7 @@ public class Controller implements Initializable {
 
 
 
-        series.setName("JOHAN");
+        series.setName(colocar_el_usuario_Actual());
 
 
         lista_puntos.getData().add(series);
