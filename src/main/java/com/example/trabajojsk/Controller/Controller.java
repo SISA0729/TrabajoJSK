@@ -33,14 +33,6 @@ import javafx.stage.Window;
 import static com.example.trabajojsk.Controller.Controller_pestaña.Crear_y_comprobar_fichero;
 import static com.example.trabajojsk.Metodos_johan.*;
 
-
-
-
-import java.io.*;
-import java.net.URL;
-import java.util.*;
-
-
 public class Controller implements Initializable {
 
 

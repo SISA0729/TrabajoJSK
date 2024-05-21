@@ -137,6 +137,19 @@ public class Controller_pestaña implements Initializable {
         lista_puntos.getData().add(series);
     }
 
+    @FXML
+    public void abrirCancha() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/trabajojsk/cancha.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 
