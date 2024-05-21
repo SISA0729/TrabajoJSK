@@ -1,26 +1,29 @@
 package com.example.trabajojsk.Controller;
 
 import com.example.trabajojsk.POO.Usuario;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+
+import java.util.ArrayList;
+
+import static com.example.trabajojsk.Controller.Controller.*;
 
 public class Controller_menu {
     @FXML
     public Controller registroController;
-    @FXML
-    public ListView<String> listaNombre;
-    @FXML
-    public ListView<String> nombreUsuario2;
-    @FXML
-    public ListView<String> listaCOntraseña;
-    @FXML
-    public ListView<String> listaCorreo;
-    @FXML
-    public ListView<String> nombreUsuario;
+
+    public Controller_menu() {
+        this.registroController = new Controller();
+    }
+
+
     @FXML
     public Button buttonEsc;
     @FXML
@@ -30,15 +33,31 @@ public class Controller_menu {
     @FXML
     public Button buttonPerfil;
     @FXML
+    public TextField nombre;
+    @FXML
+    public TextField nombreUsuario2;
+    @FXML
+    public TextField contraseña;
+    @FXML
+    public TextField correoElectronico;
+    @FXML
+    public TextField nombreUsuario1;
+    @FXML
     private Button inicio;
     @FXML
     private Button salir;
 
-    private ObservableList<String> listaNombreData;
-    private ObservableList<String> nombreUsuario2Data;
-    private ObservableList<String> listaCOntraseñaData;
-    private ObservableList<String> listaCorreoData;
-    private ObservableList<String> nombreUsuarioData;
+
+    @FXML
+    private ObservableList<String> listaNombreData = FXCollections.observableArrayList();
+    @FXML
+    private ObservableList<String> nombreUsuario2Data = FXCollections.observableArrayList();
+    @FXML
+    private ObservableList<String> listaContraseñaData = FXCollections.observableArrayList();
+    @FXML
+    private ObservableList<String> listaCorreoData = FXCollections.observableArrayList();
+    @FXML
+    private ObservableList<String> nombreUsuarioData = FXCollections.observableArrayList();
 
 
 
@@ -94,23 +113,17 @@ public class Controller_menu {
 
     @FXML
     public void initialize() {
-        if (registroController != null) {
-            Usuario usuario = registroController.getUsuario();
-            setUsuario(usuario);
+        ArrayList<Usuario> usuarios = registroController.carregarUsuariosDoRegistro();
+        Usuario usuario1 = registroController.carregarUsuariosDoRegistro().get(0);
+        if (usuario1 != null) {
+            Usuario usuario = usuarios.get(0);
+            nombreUsuario1.setText(usuario.getUsuario());
+            nombreUsuario2.setText(usuario.getUsuario());
+            contraseña.setText(usuario.getContraseña());
+            correoElectronico.setText(usuario.getCorreoElectronico());
         }
-    }
-
-    public void setUsuario(Usuario usuario) {
-        listaNombre.setItems(FXCollections.observableArrayList(usuario.getNombre()));
-        nombreUsuario2.setItems(FXCollections.observableArrayList(usuario.getApellidos()));
-        listaCOntraseña.setItems(FXCollections.observableArrayList(usuario.getContraseña()));
-        listaCorreo.setItems(FXCollections.observableArrayList(usuario.getCorreoElectronico()));
-        nombreUsuario.setItems(FXCollections.observableArrayList(usuario.getUsuario()));
-
 
     }
-
-
 
 
 }

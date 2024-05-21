@@ -32,8 +32,10 @@ public class Controller_pestaña implements Initializable {
     private Usuario usuario;
 
 
+
+
     @FXML
-    private ArrayList<Usuario> usuarios;
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
 
     @FXML
     private TextField textLocalidad;

@@ -5,3 +5,4 @@ Benedict;Bridgerton;Bene@gmail.com;Bene;1234
 MIchael;Bridgerton;michael@gmail.com;Michael;1234
 Joao;Guilerme;Joao123@gmail.com;Jao;1234
 Hitalo;Gomez;HitaloGomes@gmail.com;Hitalo;1234
+Kamilly;Brito;kamilly@gmail.com;kami;1234

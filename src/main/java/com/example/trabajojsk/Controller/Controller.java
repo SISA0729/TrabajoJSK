@@ -47,6 +47,11 @@ public class Controller implements Initializable {
     @FXML
     private ArrayList<Usuario> usuarios;
 
+
+    public Controller() {
+        this.usuarios = new ArrayList<>();
+    }
+
     //NUEVOS
 
     @FXML
@@ -66,6 +71,8 @@ public class Controller implements Initializable {
     @FXML
     private Button botonIniciar;
     private Usuario usuario;
+
+
 
 
     /**
@@ -150,13 +157,13 @@ public class Controller implements Initializable {
         return null;
     }
 
-    private ArrayList<Usuario> carregarUsuariosDoRegistro() {
+    public ArrayList<Usuario> carregarUsuariosDoRegistro() {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Registro.txt";
         try (Scanner lector = new Scanner(crearYComprobarFichero(rutaFichero))) {
             while (lector.hasNext()) {
                 String linea = lector.nextLine();
                 String[] partes = linea.split(";");
-                if (partes.length == 5) {
+                if (partes.length >= 5) {
                     String contraseña = partes[4].trim();
                     String usuario = partes[3].trim();
                     String nombre = partes[0].trim();

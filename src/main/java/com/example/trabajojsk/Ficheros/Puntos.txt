@@ -4,3 +4,4 @@ sisa,0,0,0,5
 kamilly,0,0,0,5
 Jao,0,0,0,5
 Hitalo,0,0,0,5
+kami,0,0,0,5
