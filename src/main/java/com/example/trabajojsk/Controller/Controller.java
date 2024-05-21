@@ -199,14 +199,7 @@ public class Controller implements Initializable {
 
         if (comprobarResultado == 2) {
 
-            String usuario_txt = "com\\example\\trabajojsk\\Ficheros\\Usuario_Actual.txt";
-            String contenido = "Este es el contenido que quiero escribir en el archivo";
-
-            try (FileWriter writer = new FileWriter(usuario_txt)) {
-                writer.append(contenido);
-            } catch (IOException e) {
-                System.out.println("Ocurrió un error al escribir en el archivo: " + e.getMessage());
-            }
+            octener_el_usuario_actual(nombre);
 
 
 
@@ -252,6 +245,7 @@ public class Controller implements Initializable {
 
     @FXML
     private void eventSalir(ActionEvent event){
+        eliminar_usuario_actual();
         System.exit(0);
     }
     @FXML
@@ -327,7 +321,7 @@ public class Controller implements Initializable {
        // System.out.println(carregarUsuariosDoArquivo().get(1));
 
 
-        Object[] puntos = verPuntos("johan","1234");
+        Object[] puntos = verPuntos(colocar_el_usuario_Actual(),"1234");
 
 
         XYChart.Series series = new XYChart.Series<>();

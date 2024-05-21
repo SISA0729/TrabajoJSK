@@ -5,6 +5,8 @@ import javafx.scene.chart.XYChart;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import com.example.trabajojsk.Controller.Controller.*;
 import static com.example.trabajojsk.Controller.Controller.Crear_y_comprobar_fichero;
@@ -14,9 +16,8 @@ public class Metodos_johan {
     public static void main(String[] args) {
 
 
-
-        System.out.println(Arrays.toString(verPuntos("sisa","1234")));
     }
+
 
 
     /**
@@ -148,6 +149,50 @@ public class Metodos_johan {
     }
 
 
+    public static void octener_el_usuario_actual (String nombre){
+        String usuario_txt = "src/main/java/com/example/trabajojsk/Ficheros/Usuario_Actual.txt";
+        String contenido = nombre;
+
+        try (FileWriter writer = new FileWriter(usuario_txt)) {
+            writer.append(contenido);
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error al escribir en el archivo: " + e.getMessage());
+        }
+    }
+
+    public static String colocar_el_usuario_Actual (){
+        try {
+
+            String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuario_Actual.txt";
+            File myFile = new File(rutaFichero);
+            Scanner myReader = new Scanner(myFile);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                return data;
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Ocurrió un error.");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void eliminar_usuario_actual (){
+        try {
+            String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuario_Actual.txt";
+            FileWriter writer = new FileWriter(rutaFichero, false);
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error.");
+            e.printStackTrace();
+        }
+
+    }
+
+    }
 
 
-}
+
+
+
