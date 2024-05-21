@@ -1,5 +1,7 @@
 package com.example.trabajojsk.POO;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Usuario {
@@ -9,10 +11,54 @@ public class Usuario {
     private String usuario;
     private String contraseña;
 
+    public Usuario(String nombre, String apellidos, String correoElectronico, String usuario, String contraseña) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.correoElectronico = correoElectronico;
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+    }
+
     public Usuario(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
+
+    public List<String> toList() {
+        List<String> list = new ArrayList<>();
+        list.add(nombre);
+        list.add(apellidos);
+        list.add(correoElectronico);
+        list.add(usuario);
+        list.add(contraseña);
+        return list;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+
 
     public String getUsuario() {
         return usuario;
@@ -54,4 +100,6 @@ public class Usuario {
     public int hashCode() {
         return Objects.hash(usuario);
     }
+
+
 }

@@ -29,6 +29,8 @@ import static com.example.trabajojsk.Metodos_johan.colocar_el_usuario_Actual;
 
 public class Controller_pestaña implements Initializable {
 
+    private Usuario usuario;
+
 
     @FXML
     private ArrayList<Usuario> usuarios;
@@ -148,6 +150,22 @@ public class Controller_pestaña implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void eventMenu(ActionEvent event) throws IOException {
+        Object menuzinho = event.getSource();
+        Node node = (Node) menuzinho;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/menu.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+    public Usuario getUsuario() {
+        return this.usuario;
     }
 
 

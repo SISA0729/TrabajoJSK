@@ -29,7 +29,7 @@
                               <AnchorPane prefHeight="361.0" prefWidth="201.0">
                                  <children>
                                     <Button fx:id="inicio" layoutX="23.0" layoutY="36.0" mnemonicParsing="false" onAction="#eventInicio" prefHeight="25.0" prefWidth="163.0" text="Inicio" />
-                                    <Button layoutX="23.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Menu" />
+                                    <Button layoutX="23.0" layoutY="91.0" mnemonicParsing="false" onAction="#eventMenu" prefHeight="25.0" prefWidth="163.0" text="Menu" />
                                     <Button layoutX="23.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Puntos" />
                                     <Button fx:id="salir" layoutX="23.0" layoutY="202.0" mnemonicParsing="false" onAction="#eventSalir" prefHeight="25.0" prefWidth="163.0" text="Salir" />
                                  </children>

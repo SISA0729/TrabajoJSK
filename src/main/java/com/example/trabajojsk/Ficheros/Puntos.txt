@@ -2,3 +2,5 @@ pepe,0,0,0,5
 johan,5,10,15,20
 sisa,0,0,0,5
 kamilly,0,0,0,5
+Jao,0,0,0,5
+Hitalo,0,0,0,5

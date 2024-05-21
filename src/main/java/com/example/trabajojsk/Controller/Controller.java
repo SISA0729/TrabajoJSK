@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.*;
 
 import javafx.scene.input.KeyEvent;
@@ -46,6 +47,25 @@ public class Controller implements Initializable {
     @FXML
     private ArrayList<Usuario> usuarios;
 
+    //NUEVOS
+
+    @FXML
+    public TextField textNombre;
+    @FXML
+    public TextField teextApellidos;
+    @FXML
+    public TextField textCorreo;
+    @FXML
+    public Button botonContinuar;
+
+    @FXML
+    private TextField textLocalidad;
+
+    @FXML
+    private LineChart<Number, Number> lista_puntos;
+    @FXML
+    private Button botonIniciar;
+    private Usuario usuario;
 
 
     /**
@@ -60,9 +80,12 @@ public class Controller implements Initializable {
     @FXML
     private void eventContinuar(ActionEvent event) throws IOException {
         //creando el usuario
-        String nombre = textUsuario.getText();
+        String nombre = textNombre.getText();
+        String apellidos = teextApellidos.getText();
+        String correo = textCorreo.getText();
+        String usuarioNombre = textUsuario.getText();
         String contra = textContrasena.getText();
-        Usuario usuario = new Usuario(nombre,contra);
+        Usuario usuario = new Usuario(nombre, apellidos, correo, usuarioNombre, contra);
 
         if (usuarios.contains(usuario)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -90,6 +113,7 @@ public class Controller implements Initializable {
     private void escreverUsuariosNoArquivo(Usuario usuario) {
         String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt";
         String rutaPuntos = "src/main/java/com/example/trabajojsk/Ficheros/Puntos.txt";
+        String rutaRegistro = "src/main/java/com/example/trabajojsk/Ficheros/Registro.txt";
         try (FileWriter fw = new FileWriter(crearYComprobarFichero(rutaFichero), true)) {
             fw.append(usuario.getContraseña() + ";" + usuario.getUsuario() + "\n");
         } catch (IOException e) {
@@ -97,6 +121,11 @@ public class Controller implements Initializable {
         }
         try (FileWriter puntos_subir = new FileWriter((rutaPuntos),true)){
             puntos_subir.append(usuario.getUsuario() + ",0,0,0,5" + "\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try (FileWriter fw = new FileWriter(crearYComprobarFichero(rutaRegistro), true)) {
+            fw.append("\n"+usuario.getNombre() + ";" + usuario.getApellidos() + ";" +usuario.getCorreoElectronico() + ";" +usuario.getUsuario()+ ";" +usuario.getContraseña());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -112,6 +141,28 @@ public class Controller implements Initializable {
                     String contraseña = partes[0].trim();
                     String usuario = partes[1].trim();
                     usuarios.add(new Usuario(usuario, contraseña));
+                    return usuarios;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    private ArrayList<Usuario> carregarUsuariosDoRegistro() {
+        String rutaFichero = "src/main/java/com/example/trabajojsk/Ficheros/Registro.txt";
+        try (Scanner lector = new Scanner(crearYComprobarFichero(rutaFichero))) {
+            while (lector.hasNext()) {
+                String linea = lector.nextLine();
+                String[] partes = linea.split(";");
+                if (partes.length == 5) {
+                    String contraseña = partes[4].trim();
+                    String usuario = partes[3].trim();
+                    String nombre = partes[0].trim();
+                    String apellidos = partes[1].trim();
+                    String correo = partes[2].trim();
+                    usuarios.add(new Usuario(nombre,apellidos,correo,usuario,contraseña));
                     return usuarios;
                 }
             }
@@ -200,8 +251,16 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        usuarios = new ArrayList<>();
+        carregarUsuariosDoArquivo();
+        carregarUsuariosDoArquivo();
     }
+
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+
+
     /**
      * ===============================================================================================================
      */
