@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 import java.util.ArrayList;
 
@@ -33,15 +35,15 @@ public class Controller_menu {
     @FXML
     public Button buttonPerfil;
     @FXML
-    public TextField nombre;
+    public TextFlow nombre;
     @FXML
-    public TextField nombreUsuario2;
+    public TextFlow nombreUsuario2;
     @FXML
-    public TextField contraseña;
+    public TextFlow contraseña;
     @FXML
-    public TextField correoElectronico;
+    public TextFlow correoElectronico;
     @FXML
-    public TextField nombreUsuario1;
+    public TextFlow nombreUsuario1;
     @FXML
     private Button inicio;
     @FXML
@@ -117,10 +119,27 @@ public class Controller_menu {
         Usuario usuario1 = registroController.carregarUsuariosDoRegistro().get(0);
         if (usuario1 != null) {
             Usuario usuario = usuarios.get(0);
-            nombreUsuario1.setText(usuario.getUsuario());
-            nombreUsuario2.setText(usuario.getUsuario());
-            contraseña.setText(usuario.getContraseña());
-            correoElectronico.setText(usuario.getCorreoElectronico());
+
+            Text text1 = new Text(usuario.getUsuario());
+            nombreUsuario1.getChildren().clear();
+            nombreUsuario1.getChildren().add(text1);
+
+            Text text2 = new Text(usuario.getUsuario());
+            nombreUsuario2.getChildren().clear();
+            nombreUsuario2.getChildren().add(text2);
+
+            Text text3 = new Text(usuario.getContraseña());
+            contraseña.getChildren().clear();
+            contraseña.getChildren().add(text3);
+
+            Text text4 = new Text(usuario.getCorreoElectronico());
+            correoElectronico.getChildren().clear();
+            correoElectronico.getChildren().add(text4);
+
+            Text text5 = new Text(usuario.getNombre() +" "+ usuario.getApellidos());
+            nombre.getChildren().clear();
+            nombre.getChildren().add(text5);
+
         }
 
     }

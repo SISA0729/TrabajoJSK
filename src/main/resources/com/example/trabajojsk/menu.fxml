@@ -2,13 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller.Controller_menu">
    <top>
@@ -30,14 +30,14 @@
                                     <Label layoutX="36.0" layoutY="130.0" prefHeight="20.0" prefWidth="170.0" text="Contraseña" />
                                     <Label layoutX="36.0" layoutY="181.0" prefHeight="20.0" prefWidth="170.0" text="Correo Electrónico" />
                                     <Button layoutX="362.0" layoutY="201.0" mnemonicParsing="false" text="Editar" />
-                                    <TextField fx:id="nombre" layoutX="36.0" layoutY="48.0" prefHeight="26.0" prefWidth="298.0" />
-                                    <TextField fx:id="nombreUsuario2" layoutX="36.0" layoutY="99.0" prefHeight="26.0" prefWidth="303.0" />
-                                    <TextField fx:id="contraseña" layoutX="38.0" layoutY="148.0" prefHeight="26.0" prefWidth="298.0" />
-                                    <TextField fx:id="correoElectronico" layoutX="38.0" layoutY="203.0" prefHeight="26.0" prefWidth="298.0" />
+                                    <TextFlow fx:id="nombre" layoutX="36.0" layoutY="43.0" prefHeight="28.0" prefWidth="279.0" />
+                                    <TextFlow fx:id="nombreUsuario2" layoutX="36.0" layoutY="100.0" prefHeight="28.0" prefWidth="279.0" />
+                                    <TextFlow fx:id="contraseña" layoutX="36.0" layoutY="147.0" prefHeight="28.0" prefWidth="279.0" />
+                                    <TextFlow fx:id="correoElectronico" layoutX="36.0" layoutY="202.0" prefHeight="28.0" prefWidth="279.0" />
                                  </children>
                               </AnchorPane>
                               <Circle fill="WHITE" layoutX="60.0" layoutY="56.0" radius="36.0" stroke="#ffffff00" strokeType="INSIDE" />
-                              <TextField fx:id="nombreUsuario1" layoutX="106.0" layoutY="43.0" prefHeight="26.0" prefWidth="298.0" />
+                              <TextFlow fx:id="nombreUsuario1" layoutX="107.0" layoutY="41.0" prefHeight="28.0" prefWidth="279.0" />
                            </children>
                         </AnchorPane>
                      </children>
