@@ -222,10 +222,6 @@ public class Controller implements Initializable {
 
             octener_el_usuario_actual(nombre);
 
-
-
-
-
             Object o = event.getSource();
             Node node = (Node) o;
             Scene scene1 = node.getScene();

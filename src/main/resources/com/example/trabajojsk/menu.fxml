@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -12,28 +14,60 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller.Controller_menu">
    <top>
-      <AnchorPane prefHeight="500.0" prefWidth="209.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <BorderPane layoutX="326.0" layoutY="93.0" prefHeight="224.0" prefWidth="440.0" style="-fx-background-color: #4094DE;">
+            <BorderPane layoutX="242.0" layoutY="87.0" prefHeight="356.0" prefWidth="528.0" style="-fx-background-color: #4094DE;">
                <top>
-                  <Pane prefHeight="330.0" prefWidth="440.0" style="-fx-background-radius: 200;" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="356.0" prefWidth="528.0" style="-fx-background-radius: 200;" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="-2.0" prefHeight="229.0" prefWidth="386.0" style="-fx-background-radius: 200;">
+                        <AnchorPane layoutX="-1.0" prefHeight="349.0" prefWidth="530.0" style="-fx-background-radius: 200;">
                            <children>
-                              <AnchorPane layoutX="2.0" layoutY="66.0" prefHeight="264.0" prefWidth="440.0" style="-fx-background-color: pink;">
+                              <AnchorPane layoutX="1.0" layoutY="66.0" prefHeight="291.0" prefWidth="528.0" style="-fx-background-color: pink;">
                                  <children>
-                                    <Button layoutX="362.0" layoutY="48.0" mnemonicParsing="false" text="Editar" />
-                                    <Button layoutX="362.0" layoutY="99.0" mnemonicParsing="false" text="Editar" />
-                                    <Button layoutX="362.0" layoutY="146.0" mnemonicParsing="false" text="Editar" />
-                                    <Label layoutX="36.0" layoutY="28.0" prefHeight="20.0" prefWidth="170.0" text="Nombre" />
-                                    <Label layoutX="36.0" layoutY="79.0" prefHeight="20.0" prefWidth="170.0" text="Nombre de usuario" />
-                                    <Label layoutX="36.0" layoutY="130.0" prefHeight="20.0" prefWidth="170.0" text="Contraseña" />
-                                    <Label layoutX="36.0" layoutY="181.0" prefHeight="20.0" prefWidth="170.0" text="Correo Electrónico" />
-                                    <Button layoutX="362.0" layoutY="201.0" mnemonicParsing="false" text="Editar" />
-                                    <TextFlow fx:id="nombre" layoutX="36.0" layoutY="43.0" prefHeight="28.0" prefWidth="279.0" />
-                                    <TextFlow fx:id="nombreUsuario2" layoutX="36.0" layoutY="100.0" prefHeight="28.0" prefWidth="279.0" />
-                                    <TextFlow fx:id="contraseña" layoutX="36.0" layoutY="147.0" prefHeight="28.0" prefWidth="279.0" />
-                                    <TextFlow fx:id="correoElectronico" layoutX="36.0" layoutY="202.0" prefHeight="28.0" prefWidth="279.0" />
+                                    <Button fx:id="b_editarNombre" layoutX="408.0" layoutY="27.0" mnemonicParsing="false" onAction="#eventEditarNombre" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="b_editarUsuario" layoutX="408.0" layoutY="80.0" mnemonicParsing="false" onAction="#eventEditarUsuario" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="b_editarCOntraseña" layoutX="408.0" layoutY="132.0" mnemonicParsing="false" onAction="#eventEditarContraseña" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="36.0" layoutY="28.0" prefHeight="25.0" prefWidth="83.0" text="Nombre">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="36.0" layoutY="79.0" prefHeight="20.0" prefWidth="170.0" text="Nombre de usuario">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="36.0" layoutY="130.0" prefHeight="20.0" prefWidth="170.0" text="Contraseña">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="35.0" layoutY="182.0" prefHeight="20.0" prefWidth="170.0" text="Correo Electrónico">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="b_editarCorreo" layoutX="408.0" layoutY="185.0" mnemonicParsing="false" onAction="#eventEditarCorreo" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <TextFlow fx:id="nombre" layoutX="36.0" layoutY="49.0" prefHeight="31.0" prefWidth="331.0" />
+                                    <TextFlow fx:id="nombreUsuario2" layoutX="36.0" layoutY="106.0" prefHeight="28.0" prefWidth="320.0" />
+                                    <TextFlow fx:id="contraseña" layoutX="36.0" layoutY="157.0" prefHeight="28.0" prefWidth="327.0" />
+                                    <TextFlow fx:id="correoElectronico" layoutX="36.0" layoutY="209.0" prefHeight="28.0" prefWidth="327.0" />
                                  </children>
                               </AnchorPane>
                               <Circle fill="WHITE" layoutX="60.0" layoutY="56.0" radius="36.0" stroke="#ffffff00" strokeType="INSIDE" />
@@ -50,13 +84,18 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <VBox prefHeight="500.0" prefWidth="270.0">
+            <VBox prefHeight="501.0" prefWidth="206.0">
                <children>
-                  <Pane prefHeight="501.0" prefWidth="270.0" style="-fx-background-color: #4094DE;">
+                  <Pane prefHeight="500.0" prefWidth="238.0" style="-fx-background-color: #4a5867;">
                      <children>
-                        <Button fx:id="buttonMiCuenta" layoutX="36.0" layoutY="33.0" mnemonicParsing="false" onAction="#eventMiCuenta" prefHeight="37.0" prefWidth="198.0" text="Mi cuenta" />
-                        <Button fx:id="buttonCerrarSesión" layoutX="36.0" layoutY="438.0" mnemonicParsing="false" onAction="#eventCerrarSesión" prefHeight="37.0" prefWidth="198.0" text="Cerrar sesión" />
-                        <Button fx:id="buttonPerfil" layoutX="36.0" layoutY="87.0" mnemonicParsing="false" onAction="#eventPerfil" prefHeight="37.0" prefWidth="198.0" text="Perfil" />
+                        <Button fx:id="buttonMiCuenta" layoutX="36.0" layoutY="92.0" mnemonicParsing="false" onAction="#eventMiCuenta" prefHeight="32.0" prefWidth="130.0" text="Mi cuenta" />
+                        <Button fx:id="buttonCerrarSesión" layoutX="40.0" layoutY="439.0" mnemonicParsing="false" onAction="#eventCerrarSesión" prefHeight="33.0" prefWidth="130.0" text="Cerrar sesión" />
+                        <Button fx:id="buttonPerfil" layoutX="36.0" layoutY="164.0" mnemonicParsing="false" onAction="#eventPerfil" prefHeight="36.0" prefWidth="132.0" text="Perfil" />
+                        <ImageView fitHeight="122.0" fitWidth="141.0" layoutX="40.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/LOGO/LOGO-SISA.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>

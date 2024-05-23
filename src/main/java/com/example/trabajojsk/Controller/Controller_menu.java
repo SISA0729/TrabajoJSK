@@ -7,14 +7,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,17 +65,6 @@ public class Controller_menu {
     private Button salir;
 
 
-    @FXML
-    private ObservableList<String> listaNombreData = FXCollections.observableArrayList();
-    @FXML
-    private ObservableList<String> nombreUsuario2Data = FXCollections.observableArrayList();
-    @FXML
-    private ObservableList<String> listaContraseñaData = FXCollections.observableArrayList();
-    @FXML
-    private ObservableList<String> listaCorreoData = FXCollections.observableArrayList();
-    @FXML
-    private ObservableList<String> nombreUsuarioData = FXCollections.observableArrayList();
-
 
 
     @FXML
@@ -102,7 +98,16 @@ public class Controller_menu {
     }
 
     @FXML
-    public void eventEsc(ActionEvent actionEvent) {
+    public void eventEsc(ActionEvent event) throws IOException {
+        Object vuelta = event.getSource();
+        Node node = (Node) vuelta;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     @FXML
@@ -114,7 +119,16 @@ public class Controller_menu {
     }
 
     @FXML
-    public void eventPerfil(ActionEvent actionEvent) {
+    public void eventPerfil(ActionEvent actionEvent) throws IOException {
+        Object irPerfil = actionEvent.getSource();
+        Node node = (Node) irPerfil;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/perfil.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     public void setRegistroController(Controller registroController) {
@@ -165,4 +179,51 @@ public class Controller_menu {
     }
 
 
+    public void eventEditarNombre(ActionEvent actionEvent) throws IOException {
+        Object irPerfil = actionEvent.getSource();
+        Node node = (Node) irPerfil;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/perfil.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    public void eventEditarUsuario(ActionEvent actionEvent) throws IOException {
+        Object irPerfil = actionEvent.getSource();
+        Node node = (Node) irPerfil;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/perfil.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    public void eventEditarContraseña(ActionEvent actionEvent) throws IOException {
+        Object irPerfil = actionEvent.getSource();
+        Node node = (Node) irPerfil;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/perfil.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    public void eventEditarCorreo(ActionEvent actionEvent) throws IOException {
+        Object irPerfil = actionEvent.getSource();
+        Node node = (Node) irPerfil;
+        Scene scene1 = node.getScene();
+        Window window = scene1.getWindow();
+        Stage stage = (Stage) window;
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/perfil.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
 }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #30373e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabajojsk.Controller.Controller_perfil">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="501.0" prefWidth="206.0" style="-fx-background-color: #4a5867;">
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <ImageView fitHeight="122.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <image>
+                              <Image url="@images/LOGO/LOGO-SISA.png" />
+                           </image>
+                        </ImageView>
+                     </top>
+                     <center>
+                        <Pane prefHeight="313.0" prefWidth="206.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Pane prefHeight="378.0" prefWidth="206.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button layoutX="34.0" layoutY="14.0" mnemonicParsing="false" onAction="#eventMiCuenta" prefHeight="36.0" prefWidth="125.0" text="Mi cuenta" />
+                              <Button layoutX="34.0" layoutY="82.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="125.0" text="Perfil" />
+                              <Button layoutX="35.0" layoutY="283.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="124.0" text="Cerrar sesión" />
+                           </children>
+                        </Pane>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="583.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="500.0" prefWidth="600.0">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutX="36.0" layoutY="65.0" prefHeight="390.0" prefWidth="528.0" style="-fx-background-color: #4094DE; -fx-background-radius: 25;">
+                           <children>
+                              <AnchorPane layoutY="65.0" prefHeight="331.0" prefWidth="528.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <Button fx:id="b_editarNombre" layoutX="424.0" layoutY="50.0" mnemonicParsing="false" onAction="#eventEditarNombre" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="b_editarUsuario" layoutX="424.0" layoutY="109.0" mnemonicParsing="false" onAction="#eventEditarUsuario" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="b_editarCOntraseña" layoutX="424.0" layoutY="161.0" mnemonicParsing="false" onAction="#eventEditarContraseña" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="105.0" layoutY="27.0" prefHeight="25.0" prefWidth="83.0" text="Nombre">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="103.0" layoutY="82.0" prefHeight="20.0" prefWidth="170.0" text="Nombre de usuario">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="103.0" layoutY="134.0" prefHeight="20.0" prefWidth="170.0" text="Contraseña">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="103.0" layoutY="187.0" prefHeight="20.0" prefWidth="170.0" text="Correo Electrónico">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="b_editarCorreo" layoutX="424.0" layoutY="214.0" mnemonicParsing="false" onAction="#eventEditarCorreo" text="Editar">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Circle fill="WHITE" layoutX="59.0" layoutY="14.0" radius="39.0" stroke="#ffffff00" strokeType="INSIDE" />
+                                    <TextField fx:id="nombreCambiar" layoutX="105.0" layoutY="50.0" prefHeight="30.0" prefWidth="307.0" />
+                                    <TextField fx:id="usuarioCambiar" layoutX="105.0" layoutY="109.0" prefHeight="30.0" prefWidth="307.0" />
+                                    <TextField fx:id="contraseñaCambiar" layoutX="105.0" layoutY="161.0" prefHeight="30.0" prefWidth="307.0" />
+                                    <TextField fx:id="correoCambiar" layoutX="105.0" layoutY="214.0" prefHeight="30.0" prefWidth="307.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                        <Button fx:id="buttonEsc" layoutX="531.0" layoutY="14.0" minWidth="47.0" mnemonicParsing="false" onAction="#eventEsc" prefHeight="43.0" prefWidth="47.0" style="-fx-background-radius: 100;" text="X">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
