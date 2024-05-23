@@ -1,6 +1,1 @@
-Kamilly;Brito;kami@gmail.com;kamilly;1234
-Cadu;Fernandez;cafezinho123@gmail.com;cafezinho;kamilly123
-Will;Duarte;willduarte@gmail.com;Will;1234
-alberto;da silva;silvaalberto@gmail.com;alfredo;1234
-cadu;Fernandez;cafezinho@gmail.com;caduzinho;1234
-cadu;Fernandez;cafezinho@gmail.com;cafezinhozinho;1234
+Kamilly;Brito;kamilly@gmail.com;kami;1234

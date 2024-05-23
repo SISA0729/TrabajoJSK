@@ -190,8 +190,8 @@ public class Controller_perfil {
 
         for (String linha : linhas) {
             String[] partes = linha.split(";");
-            if (partes.length > 1 && partes[1].equals(senhaAntiga) && partes[0].equals(usuario.getUsuario())) {
-                partes[1] = novaSenha;
+            if (partes.length > 1 && partes[0].equals(senhaAntiga) && partes[1].equals(usuario.getUsuario())) {
+                partes[0] = novaSenha; // Altera a senha, que está no índice 0
                 linhasAtualizadas.add(String.join(";", partes));
             } else {
                 linhasAtualizadas.add(linha);

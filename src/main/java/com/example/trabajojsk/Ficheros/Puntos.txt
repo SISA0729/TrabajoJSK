@@ -1,5 +1,2 @@
 
-kamilly,0,0,0,5
-cafezinho,0,0,0,5
-Will,0,0,0,5
-alfredo,0,0,0,5
+kami,0,0,0,5

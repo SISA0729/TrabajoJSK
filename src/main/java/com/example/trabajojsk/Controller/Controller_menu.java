@@ -99,15 +99,7 @@ public class Controller_menu {
 
     @FXML
     public void eventEsc(ActionEvent event) throws IOException {
-        Object vuelta = event.getSource();
-        Node node = (Node) vuelta;
-        Scene scene1 = node.getScene();
-        Window window = scene1.getWindow();
-        Stage stage = (Stage) window;
 
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/trabajojsk/pestaña.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
     }
 
     @FXML
