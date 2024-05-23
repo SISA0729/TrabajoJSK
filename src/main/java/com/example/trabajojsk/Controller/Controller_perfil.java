@@ -70,10 +70,8 @@ public class Controller_perfil {
         String novaSenha = contraseñaCambiar.getText().trim();
         String senhaAntiga = usuarioAtual.getContraseña();
         usuarioAtual.setContraseña(novaSenha);
-        ArrayList<Usuario> usuarios = registroController.carregarUsuariosDoRegistro();
-        for (Usuario usuario : usuarios) {
-            atualizarSenhaUsuarioEmArquivo("src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt", senhaAntiga, novaSenha, usuario);
-        }
+        // Atualiza a senha apenas do usuarioAtual
+        atualizarSenhaUsuarioEmArquivo("src/main/java/com/example/trabajojsk/Ficheros/Usuarios.txt", senhaAntiga, novaSenha, usuarioAtual);
         atualizarRegistro(usuarioAtual);
     }
 
